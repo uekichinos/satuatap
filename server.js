@@ -160,7 +160,7 @@ function renderPage() {
   </div>
 
   <footer>
-    <p>Built and hosted by <a href="https://github.com/uekichinos" target="_blank" rel="noopener">uekichinos</a></p>
+    <p>Built and hosted by <a href="https://uekichinos.xyz/" target="_blank" rel="noopener">uekichinos</a></p>
   </footer>
 
 </div>
