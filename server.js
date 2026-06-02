@@ -117,13 +117,22 @@ function renderPage() {
       color: var(--text);
       transition: border-color 0.15s, background 0.15s;
       gap: 0.75rem;
+      position: relative; overflow: hidden;
     }
-
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent);
+      transition: left 0.4s ease;
+    }
     .card:hover {
       border-color: var(--accent);
       background: #1c2128;
       text-decoration: none;
     }
+    .card:hover::before { left: 150%; }
 
     .card-body { display: flex; flex-direction: column; gap: 0.2rem; min-width: 0; }
 
