@@ -4,9 +4,9 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const FAVICON_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <rect width="100" height="100" rx="18" fill="#161b22"/>
-  <text x="50" y="70" font-family="system-ui,sans-serif" font-size="64" font-weight="700"
-        fill="#58a6ff" text-anchor="middle" dominant-baseline="auto">S</text>
+  <rect width="100" height="100" rx="22" fill="#111827"/>
+  <path d="M 16,74 L 50,20 L 84,74" fill="none" stroke="#3B82F6"
+        stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
 
 const ARROW_SVG = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -57,6 +57,8 @@ function renderPage() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>satuatap.app</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -87,21 +89,18 @@ function renderPage() {
 
     header { text-align: center; margin-bottom: 2.5rem; }
 
-    .logo {
-      width: 72px; height: 72px; border-radius: 14px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      display: inline-flex; align-items: center; justify-content: center;
-      margin-bottom: 1rem;
-      font-size: 2.5rem; font-weight: 700; color: var(--accent);
-      line-height: 1;
+    .lockup {
+      display: inline-flex; align-items: center; gap: 14px;
+      margin-bottom: 0.6rem;
     }
 
-    header h1 {
-      font-size: 1.6rem; font-weight: 600; letter-spacing: -0.4px;
+    .brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600; font-size: 1.45rem;
+      letter-spacing: 0.2em; color: var(--text);
     }
 
-    header p { color: var(--muted); margin-top: 0.4rem; font-size: 0.95rem; }
+    header p { color: var(--muted); margin-top: 0; font-size: 0.9rem; }
 
     .grid {
       display: grid;
@@ -150,8 +149,13 @@ function renderPage() {
 <div class="container">
 
   <header>
-    <div class="logo">S</div>
-    <h1>satuatap.app</h1>
+    <div class="lockup">
+      <svg viewBox="0 0 44 54" width="36" height="44" fill="none"
+           stroke="#3B82F6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M 2,50 L 22,4 L 42,50"/>
+      </svg>
+      <span class="brand">SATU ATAP</span>
+    </div>
     <p>A suite of lightweight web applications.</p>
   </header>
 
